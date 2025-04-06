@@ -13,7 +13,12 @@ public class WordFrequencyCounter {
         StringBuilder normalizedText = new StringBuilder();
 
         for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            if (Character.isLetterOrDigit(c) || Character.isWhitespace(c)) {
+                normalizedText.append(Character.toLowerCase(c));
+            }
         }
 
+        return normalizedText.toString();
     }
 }
